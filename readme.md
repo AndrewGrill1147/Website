@@ -1,9 +1,9 @@
-Dependencies:
+**Dependencies:**
 
-express\n
+express
 
-express-sessions\n
+express-sessions
 
-node.js\n
+node.js
 
-jQuery(3.2.1 slim included)\n
+jQuery(3.2.1 slim included)
