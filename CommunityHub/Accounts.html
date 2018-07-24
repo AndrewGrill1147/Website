@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<title>Accounts</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="jquery-3.2.1.slim.min.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top">
+	<div class="navbar-header">
+		<a class="navbar-brand">Accounts</a>
+	</div>
+	<ul class="nav navbar-nav">
+		<li><a href="index.html">Our Home</a></li>
+		<li><a href="About.html">About</a></li>
+		<li><a href="Accounts.html">Accounts</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="Discord.html">Discord Community</a></li>
+	</ul>
+</nav>
+
+<div class="container">
+
+	<span class="wrapper">
+		<a href="https://www.twitch.tv/blackdahlia1147" target="_blank"><img src="Pictures/Twitch.png" class="hover"></a>
+		<p class="text">BlackDahlia1147</p>
+	</span>
+	
+	<span class="wrapper">
+		<img src="Pictures/BNet.png" class="hover">
+		<p class="text">AGgroDahlia#1766</p>
+	</span>
+	
+	<span class="wrapper">
+		<a href="https://steamcommunity.com/profiles/76561198037923982/" target="_blank"><img src="Pictures/Steam.png" class="hover"></a>\
+		<p class="text">BlackDahlia1147</p>
+	</span>
+
+	<span class="wrapper">
+		<img src="Pictures/UPlay.png" class="hover">
+		<p class="text">BlackDahlia1147</p>
+	</span>
+		
+	<span class="wrapper">
+		<a href="https://discord.gg/0YfEXFpSipDnqX9a" target="_blank"><img src="Pictures/Discord.png" class="hover"></a>
+		<p class="text">BlackDahlia1147#0579</p>
+	</span>
+		
+	<span class="wrapper">
+		<a href="https://twitter.com/BlackDahlia1147" target="_blank"><img src="Pictures/Twitter.png" class="hover"></a>
+		<p class="text">BlackDahlia1147</p>
+	</span>
+
+	<span class="wrapper">
+		<img src="Pictures/Gmail.png" class="hover">
+		<p class="text">blackdahlia1147@gmail.com</p>
+	</span>
+</div>
+
+<script>
+	$('.wrapper').mouseover(function(){
+		$(this).find(".text").css('display','inline');
+	});
+
+	$('.wrapper').mouseout(function(){
+		$(this).find(".text").hide();
+	});
+</script>
+
+</body>
+</html>

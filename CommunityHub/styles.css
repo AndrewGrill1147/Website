@@ -1,0 +1,81 @@
+body{
+	background: #400040;
+	background: linear-gradient(to bottom, black, #400040);
+	height: 100%;
+}
+
+div{
+	color: red;
+}
+
+tr{
+	color: red;
+}
+
+html{
+	height: 100%;
+	background: linear-gradient(to bottom, black, #400040);
+	background-repeat: no-repeat;
+	background-color: #400040;
+	background-position: center;
+	background-size: cover;
+	font-family: ‘Arial Narrow Bold’, ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+}
+
+.navbar-static-top{
+	margin-bottom: 0px;
+}
+
+a:link{
+	color: white;
+}
+
+a:hover{
+	color: gold;
+}
+
+a:visited{
+	color: goldenrod;
+}
+
+iframe{
+	border:none;
+}
+
+input[type="checkbox"]{
+	color:red;
+}
+
+button{
+    background-color: darkred;
+    border: none;
+	border-radius:10px;
+    color: red;
+    padding: 15px 32px;
+	margin: 5px 3px;
+    text-align: center;
+	display: inline;
+    text-decoration: none;
+	font-family: Arial Narrow Bold;
+    font-size: 16px;
+}
+
+img{
+	width: 250px;
+	height: 250px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	opacity: 0.5;
+	position: relative;
+}
+img:hover{
+	opacity: 1;
+	transition: opacity .25s ease-in-out;
+}
+
+.wrapper p{
+	position: relative;
+	display: none;
+	left: -190px;
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<title>Our Home</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/styles.css">
+<script src="jquery-3.2.1.slim.min.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top">
+	<div class="navbar-header">
+		<a class="navbar-brand">Home</a>
+	</div>
+	<ul class="nav navbar-nav">
+		<li><a href="index.html">Our Home</a></li>
+		<li><a href="About.html">About</a></li>
+		<li><a href="Accounts.html">Accounts</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="Discord.html">Discord Community</a></li>
+	</ul>
+</nav>
+
+<div id="SELECTION">
+	<input type="checkbox" id="enablePlayer" checked>Twitch Player
+	<br>
+	<input type="checkbox" id="enableChat" checked>Twitch Chat
+	<br>
+	<input type="checkbox" id="enableGame">Browser Game! (Sort The Court)
+	<br>
+	<input type="checkbox" id="enablePlaylist">Youtube Playlist
+	<br>
+	<button id="generation" onclick="generator()">Go</button>
+	<hr>
+</div>
+
+<div id="CONTENT">
+</div>
+
+<script>
+function generator(){
+	console.log('before: ' + document.cookie);
+	var choices = new Array(4);
+	var cookieStr = '';
+	choices[0] = $('#enablePlayer');
+	choices[1] = $('#enableChat');
+	choices[2] = $('#enableGame');
+	choices[3] = $('#enablePlaylist');
+	
+	$('#CONTENT').empty();
+	$('#CONTENT').append("<button onclick='reset()'>Reset</button><br>");
+	if($(choices[0]).is(':checked')){
+		console.log("Adding the player");
+		$('#CONTENT').append("<iframe id='MyPlayer' class='stretch169' src='https://player.twitch.tv/?channel=blackdahlia1147&autoplay=true&muted=true' width='1104' height='621' allowFullScreen='true'></iframe>");
+		cookieStr += '0';
+	}
+	
+	if(choices[1].is(':checked')){
+		console.log("Adding the chat");
+		$('#CONTENT').append("<iframe id='MyChat' class='stretch169' frameborder='1' scrolling='yes' src='https://www.twitch.tv/blackdahlia1147/chat' height='621' width='350'></iframe><br>");
+		cookieStr += '1';
+	}
+	
+	if(choices[2].is(':checked')){
+	console.log("Adding the game");
+		$('#CONTENT').append("<iframe id='game' class='stretch169' height='543' width='962' src='http://static.arcadespot.com/embed/sort-the-court/' scrolling='no'></iframe>");
+		cookieStr += '2';
+	}
+
+	if(choices[3].is(':checked')){
+	console.log("Adding the youtube playlist");
+		$('#CONTENT').append("<iframe id='playlist' class='stretch169' width='480' height='543' src='https://www.youtube-nocookie.com/embed/videoseries?list=PLtbScohMKOcqygoyFrLlB7s_0SDg2olP1' frameborder='0' allowfullscreen></iframe>");
+		cookieStr += '3';
+	}
+
+	document.cookie = 'userChoices=' + cookieStr;
+	console.log('after: ' + document.cookie);
+
+	$('#SELECTION').hide();
+	console.log("hiding the SELECTION div...");
+	$('#CONTENT').show();
+};
+</script>
+
+<script>
+function reset(){
+	document.cookie = undefined;
+	$('#CONTENT').hide();
+	$('#SELECTION').show();
+	$('#CONTENT').empty();
+};
+</script>
+
+<script>
+$(document).ready(function(){
+	console.log('WITHIN THE DOCUMENT READY FUNCTION');
+	if(document.cookie !== undefined){
+		var checks = document.cookie.split('=')[1];
+		console.log(checks);
+
+		if(checks.indexOf('0') !== -1)
+			$('#enablePlayer').prop('checked', true);
+		else
+			$('#enablePlayer').prop('checked', false);
+
+		if(checks.indexOf('1') !== -1)
+			$('#enableChat').prop('checked', true);
+		else
+			$('#enableChat').prop('checked', false);
+
+		if(checks.indexOf('2') !== -1)
+			$('#enableGame').prop('checked', true);
+		else
+			$('#enableGame').prop('checked', false);
+
+		if(checks.indexOf('3') !== -1)
+			$('#enablePlaylist').prop('checked', true);
+		else
+			$('#enablePlaylist').prop('checked', false);
+		
+		$('#generation').trigger('click');
+	}
+});
+</script>
+
+</body>
+</html>
